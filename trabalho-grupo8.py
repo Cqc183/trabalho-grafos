@@ -23,6 +23,7 @@ def adj_para_incidencia(matriz_adj, direcionado=False):
     
     return matriz_incidencia, num_vertices, num_arestas
 
+//função pra implementar o algoritmo de Prim
 def calcular_graus(matriz_adj, direcionado=False):
     if direcionado:
         graus_saida = np.sum(matriz_adj, axis=1)
