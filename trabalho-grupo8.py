@@ -23,7 +23,7 @@ def adj_para_incidencia(matriz_adj, direcionado=False):
     
     return matriz_incidencia, num_vertices, num_arestas
 
-#função pra implementar o algoritmo de Prim
+
 def calcular_graus(matriz_adj, direcionado=False):
     if direcionado:
         graus_saida = np.sum(matriz_adj, axis=1)
@@ -33,27 +33,7 @@ def calcular_graus(matriz_adj, direcionado=False):
         graus = np.sum(matriz_adj, axis=1)
         return graus
 
-def prim(matriz_adj):
-    num_vertices = len(matriz_adj)
-    selected = np.zeros(num_vertices, dtype=bool)
-    selected[0] = True
-    mst_edges = []
-    
-    while len(mst_edges) < num_vertices - 1:
-        min_edge = float('inf')
-        u, v = -1, -1
-        for i in range(num_vertices):
-            if selected[i]:
-                for j in range(num_vertices):
-                    if not selected[j] and matriz_adj[i][j] != 0:
-                        if matriz_adj[i][j] < min_edge:
-                            min_edge = matriz_adj[i][j]
-                            u, v = i, j
-        if u != -1 and v != -1:
-            mst_edges.append((u, v, min_edge))
-            selected[v] = True
-    
-    return mst_edges
+
 
 def main():
     # Exemplo de uma matriz de adjacências
