@@ -33,6 +33,7 @@ def calcular_graus(matriz_adj, direcionado=False):
         graus = np.sum(matriz_adj, axis=1)
         return graus
 
+#Função pra implmentar o algoritmo de prim
 def prim(matriz_adj):
     num_vertices = len(matriz_adj)
     selected = np.zeros(num_vertices, dtype=bool)
